@@ -29,16 +29,18 @@ int main(int argc, char* argv[]) {
 	// MAX_PATH 是一个常数，通常定义为260，代表Windows系统文件路径的最大长度，加1是为了容纳\0
 	WCHAR DirPath[MAX_PATH + 1];
 	// ******需要修改部分**********
-	wcscpy_s(DirPath, MAX_PATH, L"C:\\Users\\86151\\Desktop\\hook\\x64\\Release");	// dll文件夹
+	//wcscpy_s(DirPath, MAX_PATH, L"C:\\Users\\86151\\Desktop\\PFSafetyGuard\\PFSafetyGuard\\PFDLL\\x64\\Release");	// dll文件夹
+	wcscpy_s(DirPath, MAX_PATH, L"C:\\Users\\86151\\Desktop\\RedPill\\hook\\x64\\Release");
 
 		// 文件路径
-	char DLLPath[MAX_PATH + 1] = "C:\\Users\\86151\\Desktop\\hook\\x64\\Release\\hook.dll"; // dll的地址
+	//char DLLPath[MAX_PATH + 1] = "C:\\Users\\86151\\Desktop\\PFSafetyGuard\\PFSafetyGuard\\PFDLL\\x64\\Release\\PFDLL.dll"; // dll的地址
+	char DLLPath[MAX_PATH + 1] = "C:\\Users\\86151\\Desktop\\RedPill\\hook\\x64\\Release\\hook.dll"; // dll的地址
 	// ******需要修改部分**********
 	// 要注入DLL的EXE路径初始化
 	WCHAR EXE[MAX_PATH + 1] = { 0 };
 	
 	
-	wcscpy_s(EXE, MAX_PATH, L"C:\\Users\\86151\\Desktop\\AppTest\\x64\\Release\\AppTest.exe");
+	wcscpy_s(EXE, MAX_PATH, L"C:\\Users\\86151\\Desktop\\RedPill\\AppTest\\x64\\Release\\AppTest.exe");
 	//wcscpy_s(EXE, MAX_PATH, L"E:\\record\\6th\\softwareSecurity\\code\\heapCreateAndDestory\\Debug\\heapCreateAndDestory.exe"); // HeapCreate & HeapDestory
 	//wcscpy_s(EXE, MAX_PATH, fileName); // HeapCreate & HeapDestory
 
@@ -47,6 +49,7 @@ int main(int argc, char* argv[]) {
 
 	printf("[injector] 开始调用 DetourCreateProcessWithDllEx...\n");
 
+	// DetourCreateProcessWithDllEx 函数用于创建一个新进程并注入DLL
 	if (DetourCreateProcessWithDllEx(EXE, NULL, NULL, NULL, TRUE,
 		CREATE_DEFAULT_ERROR_MODE | CREATE_SUSPENDED, NULL, DirPath,
 		&si, &pi, DLLPath, NULL)) {

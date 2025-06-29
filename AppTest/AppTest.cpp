@@ -1,11 +1,6 @@
 #include <windows.h>
-#include <iostream>
-#include <tchar.h>
-
 
 int main() {
-    MessageBoxW(NULL, L"≤‚ ‘ƒ⁄»›", L"≤‚ ‘±ÍÃ‚", MB_ICONINFORMATION | MB_OK);
-
+    MessageBoxA(NULL, "Hello from AppTest.exe", "Target", MB_OK);
     return 0;
-
 }
