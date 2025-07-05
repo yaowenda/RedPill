@@ -75,8 +75,8 @@
     <IncludePath>C:\Users\86151\Desktop\detours\Detours\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LibraryPath>C:\Users\86151\Desktop\detours\Detours\lib.X64;$(LibraryPath)</LibraryPath>
-    <IncludePath>C:\Users\86151\Desktop\detours\Detours\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\RedPill\detours\Detours\lib.X64;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\RedPill\detours\Detours\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -129,6 +129,7 @@
       <ConformanceMode>true</ConformanceMode>
       <DebugInformationFormat>None</DebugInformationFormat>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>cls.ico</file>
+        <file>error.ico</file>
+        <file>myQss.qss</file>
+        <file>open.ico</file>
+        <file>open.png</file>
+        <file>resource.qrc</file>
+        <file>safe.ico</file>
+        <file>start.ico</file>
+        <file>warning.ico</file>
+    </qresource>
+</RCC>
